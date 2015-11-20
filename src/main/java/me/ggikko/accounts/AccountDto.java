@@ -15,6 +15,7 @@ public class AccountDto {
 
     @Data
     public static class Create{
+
         @NotBlank
         @Size(min = 5)
         private String username;

@@ -15,7 +15,6 @@ public class AccountTest {
         Account account = new Account();
         account.setUsername("ggikko");
         account.setPassword("password");
-
         assertThat(account.getUsername(), is("ggikko"));
     }
 }
