@@ -24,6 +24,11 @@ public class AccountService {
 
         Account account = modelMapper.map(dto, Account.class);
 
+        String username = dto.getUsername();
+        if(repository.findByUsername(username) != null){
+            throw new UserDuplicatedException();
+        }
+
         Date date = new Date();
         account.setJoined(date);
         account.setUpdated(date);

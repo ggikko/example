@@ -17,6 +17,7 @@ public class Account {
     @Id @GeneratedValue
     private Long id;
 
+    @Column(unique = true)
     private String username;
 
     private String password;
@@ -30,7 +31,5 @@ public class Account {
 
     @Temporal(TemporalType.DATE)
     private Date updated;
-
-
 
 }

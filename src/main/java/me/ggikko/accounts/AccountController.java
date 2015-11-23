@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 /**
  * Created by Park Ji Hong, ggikko.
  */
@@ -23,7 +25,7 @@ public class AccountController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @RequestMapping(value = "/accounts", method = RequestMethod.POST)
+    @RequestMapping(value = "/accounts", method = POST)
     public ResponseEntity createAccount(@RequestBody @Valid AccountDto.Create create, BindingResult result) {
         if(result.hasErrors()){
             ErrorResponse errorResponse = new ErrorResponse();
